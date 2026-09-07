@@ -1,0 +1,26 @@
+# Tollbooth bench workload: 22 scripted tasks modeling an agent day.
+# Schema: {id, text, bytes_in, files, tokens_in, tokens_out, tier}
+# tiers are EXPECTED labels (misroute metric compares against classifier).
+- {id: read-auth, text: "Summarize auth.py for onboarding", bytes_in: 62000, files: 1, tokens_in: 15500, tokens_out: 300, tier: bulk-read}
+- {id: read-db, text: "Explain the billing schema in schema.sql", bytes_in: 48000, files: 1, tokens_in: 12000, tokens_out: 400, tier: bulk-read}
+- {id: read-api, text: "Survey all API routes across handlers", bytes_in: 55000, files: 6, tokens_in: 14000, tokens_out: 350, tier: bulk-read}
+- {id: read-config, text: "Read the webpack config to find the output dir", bytes_in: 32000, files: 1, tokens_in: 8000, tokens_out: 150, tier: bulk-read}
+- {id: read-logs, text: "Summarize the last 2000 lines of app.log", bytes_in: 180000, files: 1, tokens_in: 45000, tokens_out: 500, tier: bulk-read}
+- {id: read-deps, text: "Audit the dependency tree in package-lock.json", bytes_in: 210000, files: 1, tokens_in: 52000, tokens_out: 600, tier: bulk-read}
+- {id: read-migrations, text: "Review migrations 014 through 021", bytes_in: 26000, files: 8, tokens_in: 6500, tokens_out: 300, tier: bulk-read}
+- {id: read-tests, text: "Explain what the auth test suite covers", bytes_in: 38000, files: 4, tokens_in: 9500, tokens_out: 400, tier: bulk-read}
+- {id: read-docs, text: "Summarize the API reference docs folder", bytes_in: 70000, files: 12, tokens_in: 17500, tokens_out: 500, tier: bulk-read}
+- {id: read-changelog, text: "Summarize CHANGELOG entries since v2", bytes_in: 22000, files: 1, tokens_in: 5500, tokens_out: 250, tier: bulk-read}
+- {id: read-small, text: "Read package.json to check the React version", bytes_in: 800, files: 1, tokens_in: 200, tokens_out: 100, tier: reason}
+- {id: read-mid, text: "Review the auth middleware file", bytes_in: 8000, files: 1, tokens_in: 2000, tokens_out: 300, tier: bulk-read}
+- {id: scaffold-crud, text: "Scaffold a FastAPI CRUD resource from the user model", bytes_in: 0, files: 0, tokens_in: 4000, tokens_out: 1500, tier: scaffold}
+- {id: scaffold-docker, text: "Write a Dockerfile for the Python service", bytes_in: 0, files: 0, tokens_in: 2500, tokens_out: 800, tier: scaffold}
+- {id: scaffold-ci, text: "Generate a GitHub Actions workflow for pytest", bytes_in: 0, files: 0, tokens_in: 3000, tokens_out: 900, tier: scaffold}
+- {id: scaffold-client, text: "Create a typed API client from openapi.yaml", bytes_in: 6000, files: 1, tokens_in: 3500, tokens_out: 1800, tier: scaffold}
+- {id: scaffold-mock, text: "Write mock fixtures for the payments API", bytes_in: 0, files: 0, tokens_in: 2000, tokens_out: 1200, tier: scaffold}
+- {id: test-billing, text: "Generate pytest boilerplate for the billing module", bytes_in: 0, files: 0, tokens_in: 5000, tokens_out: 2000, tier: test-gen}
+- {id: test-auth, text: "Write pytest cases for login edge cases", bytes_in: 0, files: 0, tokens_in: 4500, tokens_out: 2200, tier: test-gen}
+- {id: test-e2e, text: "Create playwright test skeletons for checkout", bytes_in: 0, files: 0, tokens_in: 6000, tokens_out: 2500, tier: test-gen}
+- {id: reason-race, text: "Debug the race condition in the webhook worker", bytes_in: 0, files: 0, tokens_in: 9000, tokens_out: 1200, tier: reason}
+- {id: reason-state, text: "Design the checkout retry state machine", bytes_in: 0, files: 0, tokens_in: 6000, tokens_out: 1500, tier: reason}
+- {id: reason-queue, text: "Decide between Postgres LISTEN/NOTIFY and Redis streams for the inbox", bytes_in: 0, files: 0, tokens_in: 4000, tokens_out: 1000, tier: reason}

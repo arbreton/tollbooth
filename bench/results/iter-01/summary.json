@@ -1,0 +1,186 @@
+{
+  "date": "2026-09-07T04:30:50.507962+00:00",
+  "cost_model": "scripted token profiles (BENCH.md); frontier baseline = claude-sonnet-5 for every task; routed = balanced preset, simulated keys priced normally",
+  "tasks": 23,
+  "baseline_total_usd": 0.6819,
+  "routed_total_usd": 0.10498,
+  "savings_ratio": 0.154,
+  "receipt_coverage": 1.0,
+  "misroutes": [
+    {
+      "id": "scaffold-ci",
+      "expected": "scaffold",
+      "got": "test-gen"
+    }
+  ],
+  "misroute_rate": 0.0435,
+  "by_tier": {
+    "bulk-read": 0.02037,
+    "reason": 0.0764,
+    "scaffold": 0.00332,
+    "test-gen": 0.00489
+  },
+  "rows": [
+    {
+      "id": "read-auth",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.034,
+      "routed_usd": 0.00167
+    },
+    {
+      "id": "read-db",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.028,
+      "routed_usd": 0.00136
+    },
+    {
+      "id": "read-api",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.0315,
+      "routed_usd": 0.00154
+    },
+    {
+      "id": "read-config",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.0175,
+      "routed_usd": 0.00086
+    },
+    {
+      "id": "read-logs",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.095,
+      "routed_usd": 0.0047
+    },
+    {
+      "id": "read-deps",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.11,
+      "routed_usd": 0.00544
+    },
+    {
+      "id": "read-migrations",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.016,
+      "routed_usd": 0.00077
+    },
+    {
+      "id": "read-tests",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.023,
+      "routed_usd": 0.00111
+    },
+    {
+      "id": "read-docs",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.04,
+      "routed_usd": 0.00195
+    },
+    {
+      "id": "read-changelog",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.0135,
+      "routed_usd": 0.00065
+    },
+    {
+      "id": "read-small",
+      "tier": "reason",
+      "via": "anthropic/claude-sonnet-5",
+      "baseline_usd": 0.0014,
+      "routed_usd": 0.0014
+    },
+    {
+      "id": "read-mid",
+      "tier": "bulk-read",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.007,
+      "routed_usd": 0.00032
+    },
+    {
+      "id": "scaffold-crud",
+      "tier": "scaffold",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.023,
+      "routed_usd": 0.001
+    },
+    {
+      "id": "scaffold-docker",
+      "tier": "scaffold",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.013,
+      "routed_usd": 0.00057
+    },
+    {
+      "id": "scaffold-ci",
+      "tier": "test-gen",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.015,
+      "routed_usd": 0.00066
+    },
+    {
+      "id": "scaffold-client",
+      "tier": "scaffold",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.025,
+      "routed_usd": 0.00107
+    },
+    {
+      "id": "scaffold-mock",
+      "tier": "scaffold",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.016,
+      "routed_usd": 0.00068
+    },
+    {
+      "id": "test-billing",
+      "tier": "test-gen",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.03,
+      "routed_usd": 0.0013
+    },
+    {
+      "id": "test-auth",
+      "tier": "test-gen",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.031,
+      "routed_usd": 0.00133
+    },
+    {
+      "id": "test-e2e",
+      "tier": "test-gen",
+      "via": "google/gemini-2.0-flash",
+      "baseline_usd": 0.037,
+      "routed_usd": 0.0016
+    },
+    {
+      "id": "reason-race",
+      "tier": "reason",
+      "via": "anthropic/claude-sonnet-5",
+      "baseline_usd": 0.03,
+      "routed_usd": 0.03
+    },
+    {
+      "id": "reason-state",
+      "tier": "reason",
+      "via": "anthropic/claude-sonnet-5",
+      "baseline_usd": 0.027,
+      "routed_usd": 0.027
+    },
+    {
+      "id": "reason-queue",
+      "tier": "reason",
+      "via": "anthropic/claude-sonnet-5",
+      "baseline_usd": 0.018,
+      "routed_usd": 0.018
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$comment": "OBRA Tollbooth reference wiring — adapt paths, pin your hook schema version.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Glob|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python /ABSOLUTE/PATH/TO/tollbooth/tollbooth/claude_hook.py"
+          }
+        ]
+      }
+    ]
+  }
+}

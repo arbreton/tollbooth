@@ -1,8 +1,9 @@
-# Tollbooth — the model router that cut our agent bill ~90%
+# Tollbooth — a model router for coding agents
 
-> Spotify's Portal routes agent busywork to cheap models and saves ~90% of
-> Claude Code tokens. Tollbooth is the open-source version of that idea, with
-> receipts: every call routed, priced, capped, and bench-proven.
+> Most coding-agent tokens aren't reasoning. Tollbooth routes agent busywork to
+> cheap models and keeps frontier models for the work that needs them — with
+> receipts: every call routed, priced, capped, and bench-proven. Inspired by
+> Spotify's published "Portal" routing idea.
 
 Coding agents spend most tokens **not reasoning**: reading large files,
 scaffolding predictable code, generating boilerplate tests. Tollbooth sits in
@@ -13,6 +14,7 @@ ledger prices every call and budgets enforce the ceiling.
 ## How it works (60 seconds)
 
 ```bash
+git clone https://github.com/arbreton/tollbooth.git && cd tollbooth
 pip install -e .  # stdlib only (+ pytest/pyyaml to run tests & bench)
 cp .env.example .env   # BYOK: your keys, your bill (or run fully simulated)
 
@@ -33,5 +35,7 @@ proves the mix on a scripted 23-task workload; the ledger proves it per call.
 
 Status: **P1 built — bench green offline.** Router + BYOK registry + ledger
 with budget enforcement + Claude-hook reference + 23-task bench, zero vendor
-calls: see `iterations/iter-01.md`. Savings figures are measured on the
-scripted workload with documented token profiles — never production claims.
+calls: see `iterations/iter-01.md`. Savings figures (~90% on the bench) are
+measured on the scripted workload with documented token profiles — they are
+not production claims. This repo was extracted from a private monorepo, so
+the public history starts at a single commit.

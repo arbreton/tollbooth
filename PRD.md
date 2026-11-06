@@ -16,7 +16,7 @@ with no per-call attribution and no lever except "use the agent less."
 
 1. **Eng lead / indie hacker** running agents daily: wants the same output
    for ~10% of the spend, with a receipt per call.
-2. **Platform/ops owner** (the Emvo COO archetype): wants spend ceilings
+2. **Platform/ops owner** (the ops-buyer archetype): wants spend ceilings
    that *enforce* (degrade gracefully, never silently), plus audit trails.
 3. **Agent-framework builders**: want routing as a library + Claude-hook
    reference, not a platform lock-in.
@@ -44,7 +44,7 @@ with no per-call attribution and no lever except "use the agent less."
 - F3. Claude Code hook reference: PreToolUse-style hook reads tool params
   (e.g. file size on Read) and returns allow/redirect + tier + reason.
 
-**Ledger + governor (the Emvo bet):**
+**Ledger + governor (spend you can audit and cap):**
 - F4. Every routed call appends a receipt: tier, provider, model, key alias,
   tokens, USD. Never the key itself.
 - F5. Budgets: per-task and per-day caps enforced in the governor, not
@@ -78,4 +78,4 @@ with no per-call attribution and no lever except "use the agent less."
 
 - M0 docs (this folder) → M1 router/ledger/bench offline (built) →
   M2 live smoke on free tiers (measure one real day) → M3 Claude-hook dogfood
-  on a real repo → M4 upload + LinkedIn post with the savings table.
+  on a real repo → M4 public release with the savings table.

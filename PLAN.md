@@ -46,7 +46,7 @@ tollbooth/
 - **P0 docs** (done) → **P1 offline core** (done: router/ledger/bench all
   green, no vendor calls) → **P2 live smoke** (one real day on free tiers,
   measure true mix) → **P3 dogfood** (hook on a real repo for a week,
-  publish diary) → **P4 upload + post**.
+  publish diary) → **P4 public release**.
 
 ## 4. Task breakdown (P1, built)
 
